@@ -1,0 +1,76 @@
+{
+  "daily": [
+    {
+      "id": "d_clear_3",
+      "title": "Clear 3 Floors",
+      "desc": "เคลียร์ชั้นให้ครบ 3 ครั้ง (อะไรก็ได้)",
+      "metric": {
+        "scope": "daily",
+        "field": "clears",
+        "target": 3
+      },
+      "reward": {
+        "gold": 180,
+        "essence": 0
+      }
+    },
+    {
+      "id": "d_boss_1",
+      "title": "Defeat 1 Boss",
+      "desc": "เคลียร์บอส 1 ครั้ง (ชั้นลงท้าย 0)",
+      "metric": {
+        "scope": "daily",
+        "field": "bossClears",
+        "target": 1
+      },
+      "reward": {
+        "gold": 120,
+        "essence": 1
+      }
+    },
+    {
+      "id": "d_miniboss_1",
+      "title": "Defeat 1 Mini Boss",
+      "desc": "เคลียร์มินิบอส 1 ครั้ง (ชั้นลงท้าย 5)",
+      "metric": {
+        "scope": "daily",
+        "field": "miniClears",
+        "target": 1
+      },
+      "reward": {
+        "gold": 100,
+        "essence": 1
+      }
+    }
+  ],
+  "weekly": [
+    {
+      "id": "w_clear_20",
+      "title": "Clear 20 Floors",
+      "desc": "สะสมเคลียร์ชั้นรวม 20 ครั้งในสัปดาห์นี้",
+      "metric": {
+        "scope": "weekly",
+        "field": "clears",
+        "target": 20
+      },
+      "reward": {
+        "gold": 600,
+        "essence": 3
+      }
+    },
+    {
+      "id": "w_boss_5",
+      "title": "Defeat 5 Bosses",
+      "desc": "เคลียร์บอสรวม 5 ครั้งในสัปดาห์นี้",
+      "metric": {
+        "scope": "weekly",
+        "field": "bossClears",
+        "target": 5
+      },
+      "reward": {
+        "gold": 500,
+        "essence": 4
+      }
+    }
+  ]
+}

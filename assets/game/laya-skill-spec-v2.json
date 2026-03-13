@@ -1,0 +1,1675 @@
+{
+  "version": "v2-team3-default",
+  "maxRank": 5,
+  "skills": [
+    {
+      "id": "util_scan",
+      "name": "Element Scan",
+      "line": "Utility",
+      "tier": 1,
+      "type": "utility",
+      "element": "Neutral",
+      "target": "enemy",
+      "cooldownTurns": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "effect": "Reveal enemy element + elementLevel + predicted multipliers for your equipped element(s)."
+    },
+    {
+      "id": "util_neutral_strike",
+      "name": "Neutral Strike",
+      "line": "Utility",
+      "tier": 1,
+      "type": "physical",
+      "element": "Neutral",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.9,
+        0.95,
+        1.0,
+        1.05,
+        1.1
+      ],
+      "cooldownTurns": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "notes": "Always uses Neutral element; good escape from 0% matchups."
+    },
+    {
+      "id": "util_imbue_fire",
+      "name": "Imbue Fire",
+      "line": "Utility",
+      "tier": 2,
+      "type": "support",
+      "element": "Fire",
+      "target": "self_or_ally",
+      "durationTurns": [
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "effect": "Temporarily changes the target's attack element for Physical skills.",
+      "notes": "If you prefer integer turns, use: [2,2,3,3,4]."
+    },
+    {
+      "id": "util_imbue_water",
+      "name": "Imbue Water",
+      "line": "Utility",
+      "tier": 2,
+      "type": "support",
+      "element": "Water",
+      "target": "self_or_ally",
+      "durationTurns": [
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "effect": "Temporarily changes the target's attack element for Physical skills.",
+      "notes": "If you prefer integer turns, use: [2,2,3,3,4]."
+    },
+    {
+      "id": "util_imbue_wind",
+      "name": "Imbue Wind",
+      "line": "Utility",
+      "tier": 2,
+      "type": "support",
+      "element": "Wind",
+      "target": "self_or_ally",
+      "durationTurns": [
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "effect": "Temporarily changes the target's attack element for Physical skills.",
+      "notes": "If you prefer integer turns, use: [2,2,3,3,4]."
+    },
+    {
+      "id": "util_imbue_earth",
+      "name": "Imbue Earth",
+      "line": "Utility",
+      "tier": 2,
+      "type": "support",
+      "element": "Earth",
+      "target": "self_or_ally",
+      "durationTurns": [
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "effect": "Temporarily changes the target's attack element for Physical skills.",
+      "notes": "If you prefer integer turns, use: [2,2,3,3,4]."
+    },
+    {
+      "id": "s_power_swing",
+      "name": "Power Swing",
+      "line": "Striker",
+      "tier": 1,
+      "type": "physical",
+      "element": "Neutral",
+      "target": "enemy",
+      "damageMultiplier": [
+        1.25,
+        1.35,
+        1.45,
+        1.55,
+        1.65
+      ],
+      "cooldownTurns": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "notes": "Simple heavy hit; main bread-and-butter."
+    },
+    {
+      "id": "s_critical_sense",
+      "name": "Critical Sense",
+      "line": "Striker",
+      "tier": 1,
+      "type": "passive",
+      "element": "Neutral",
+      "target": "self",
+      "critChanceBonusPct": [
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "critDmgBonusPct": [
+        0.0,
+        2.5,
+        5.0,
+        7.5,
+        10.0
+      ],
+      "notes": "Passive. Adds crit chance; later ranks add crit damage."
+    },
+    {
+      "id": "s_quick_step",
+      "name": "Quick Step",
+      "line": "Striker",
+      "tier": 1,
+      "type": "buff",
+      "element": "Wind",
+      "target": "self",
+      "spdBonus": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "s_double_hit",
+      "name": "Double Hit",
+      "line": "Striker",
+      "tier": 2,
+      "type": "physical",
+      "element": "Neutral",
+      "target": "enemy",
+      "hits": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "perHitMultiplier": [
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "cooldownTurns": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "notes": "Two strikes. Total multiplier = hits * perHitMultiplier."
+    },
+    {
+      "id": "s_armor_break",
+      "name": "Armor Break",
+      "line": "Striker",
+      "tier": 2,
+      "type": "physical",
+      "element": "Earth",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.9,
+        0.95,
+        1.0,
+        1.05,
+        1.1
+      ],
+      "status": [
+        {
+          "name": "ArmorBreak",
+          "chancePct": [
+            60,
+            66,
+            72,
+            78,
+            84
+          ],
+          "durationTurns": [
+            3,
+            3,
+            3,
+            4,
+            4
+          ],
+          "effect": "DEF and MDEF - (15%..30%)",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 3
+        }
+      ],
+      "defDownPct": [
+        15.0,
+        18.75,
+        22.5,
+        26.25,
+        30.0
+      ],
+      "cooldownTurns": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "id": "s_adrenaline",
+      "name": "Adrenaline Rush",
+      "line": "Striker",
+      "tier": 2,
+      "type": "buff",
+      "element": "Fire",
+      "target": "self",
+      "atkBonusPct": [
+        15.0,
+        18.75,
+        22.5,
+        26.25,
+        30.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "cooldownTurns": [
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "notes": "If HP<50%, ATK bonus is doubled (optional rule)."
+    },
+    {
+      "id": "s_smash_finisher",
+      "name": "Smash Finisher",
+      "line": "Striker",
+      "tier": 3,
+      "type": "physical",
+      "element": "Neutral",
+      "target": "enemy",
+      "damageMultiplier": [
+        1.52,
+        1.66,
+        1.8,
+        1.95,
+        2.09
+      ],
+      "bonusIfDebuffedPct": [
+        35.0,
+        41.25,
+        47.5,
+        53.75,
+        60.0
+      ],
+      "bonusIf2DebuffsPct": [
+        60.0,
+        67.5,
+        75.0,
+        82.5,
+        90.0
+      ],
+      "cooldownTurns": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "id": "s_berserk",
+      "name": "Berserk Mode",
+      "line": "Striker",
+      "tier": 3,
+      "type": "buff",
+      "element": "Fire",
+      "target": "self",
+      "atkBonusPct": [
+        35.0,
+        41.25,
+        47.5,
+        53.75,
+        60.0
+      ],
+      "defPenaltyPct": [
+        15.0,
+        17.5,
+        20.0,
+        22.5,
+        25.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "notes": "Optional drawback: lose 3% max HP each turn while active."
+    },
+    {
+      "id": "s_execution",
+      "name": "Execution",
+      "line": "Striker",
+      "tier": 3,
+      "type": "physical",
+      "element": "Neutral",
+      "target": "enemy",
+      "damageMultiplier": [
+        1.4,
+        1.525,
+        1.65,
+        1.775,
+        1.9
+      ],
+      "executeThresholdPct": [
+        35,
+        35,
+        35,
+        40,
+        40
+      ],
+      "executeMultiplierBonus": [
+        0.6,
+        0.75,
+        0.9,
+        1.05,
+        1.2
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "s_ragnarok_strike",
+      "name": "Ragnarok Strike",
+      "line": "Striker",
+      "tier": 4,
+      "type": "physical",
+      "element": "Neutral",
+      "target": "enemy",
+      "damageMultiplier": [
+        2.09,
+        2.28,
+        2.47,
+        2.66,
+        2.85
+      ],
+      "ignoreDefPct": [
+        20,
+        25,
+        30,
+        35,
+        40
+      ],
+      "cooldownTurns": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "s_bloodlust",
+      "name": "Bloodlust",
+      "line": "Striker",
+      "tier": 4,
+      "type": "passive",
+      "element": "Poison",
+      "target": "self",
+      "lifestealPct": [
+        5.0,
+        6.75,
+        8.5,
+        10.25,
+        12.0
+      ],
+      "extraOnCritPct": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "notes": "Passive lifesteal. Optional: +5% damage taken to balance."
+    },
+    {
+      "id": "s_precision_kill",
+      "name": "Precision Kill",
+      "line": "Striker",
+      "tier": 4,
+      "type": "buff",
+      "element": "Wind",
+      "target": "self",
+      "critChanceBonusPct": [
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      "critDmgBonusPct": [
+        20.0,
+        23.75,
+        27.5,
+        31.25,
+        35.0
+      ],
+      "durationTurns": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "cooldownTurns": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "notes": "Next Physical skill within duration gets big crit bonuses."
+    },
+    {
+      "id": "a_cold_brew",
+      "name": "Cold Brew",
+      "line": "Arcanist",
+      "tier": 1,
+      "type": "magic",
+      "element": "Water",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.9,
+        0.975,
+        1.05,
+        1.125,
+        1.2
+      ],
+      "status": [
+        {
+          "name": "Slow",
+          "chancePct": [
+            70,
+            74,
+            78,
+            82,
+            86
+          ],
+          "durationTurns": [
+            2,
+            2,
+            2,
+            3,
+            3
+          ],
+          "effect": "SPD - (25%..40%)",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 2
+        },
+        {
+          "name": "Freeze",
+          "chancePct": [
+            12.75,
+            14.88,
+            17.0,
+            19.12,
+            21.25
+          ],
+          "durationTurns": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "effect": "Skip turn (hard CC)",
+          "bossChanceMultiplier": 0.6,
+          "bossMaxDurationTurns": 1
+        }
+      ],
+      "slowPct": [
+        25.0,
+        28.75,
+        32.5,
+        36.25,
+        40.0
+      ],
+      "cooldownTurns": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "id": "a_weakness_mark",
+      "name": "Weakness Mark",
+      "line": "Arcanist",
+      "tier": 1,
+      "type": "magic",
+      "element": "Neutral",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8
+      ],
+      "status": [
+        {
+          "name": "Mark",
+          "chancePct": [
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "durationTurns": [
+            3,
+            3,
+            3,
+            4,
+            4
+          ],
+          "effect": "Target takes + (15%..30%) damage",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 3
+        }
+      ],
+      "markDmgTakenPct": [
+        15.0,
+        18.75,
+        22.5,
+        26.25,
+        30.0
+      ],
+      "cooldownTurns": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "id": "a_smoke_screen",
+      "name": "Smoke Screen",
+      "line": "Arcanist",
+      "tier": 1,
+      "type": "magic",
+      "element": "Poison",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9
+      ],
+      "status": [
+        {
+          "name": "Blind",
+          "chancePct": [
+            45.0,
+            51.25,
+            57.5,
+            63.75,
+            70.0
+          ],
+          "durationTurns": [
+            2,
+            2,
+            2,
+            3,
+            3
+          ],
+          "effect": "Accuracy - (20%..35%)",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 2
+        }
+      ],
+      "blindAccDownPct": [
+        20.0,
+        23.75,
+        27.5,
+        31.25,
+        35.0
+      ],
+      "cooldownTurns": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "id": "a_hangover_hex",
+      "name": "Hangover Hex",
+      "line": "Arcanist",
+      "tier": 2,
+      "type": "magic",
+      "element": "Poison",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.8,
+        0.85,
+        0.9,
+        0.95,
+        1.0
+      ],
+      "status": [
+        {
+          "name": "Poison",
+          "chancePct": [
+            70,
+            75,
+            80,
+            85,
+            90
+          ],
+          "durationTurns": [
+            3,
+            3,
+            3,
+            4,
+            4
+          ],
+          "effect": "DoT per turn = (6%..10%) of caster MATK",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 3
+        }
+      ],
+      "dotPctOfMatk": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "a_silence_seal",
+      "name": "Silence Seal",
+      "line": "Arcanist",
+      "tier": 2,
+      "type": "magic",
+      "element": "Shadow",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9
+      ],
+      "status": [
+        {
+          "name": "Silence",
+          "chancePct": [
+            29.75,
+            34.0,
+            38.25,
+            42.5,
+            45
+          ],
+          "durationTurns": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "effect": "Cannot use skills",
+          "bossChanceMultiplier": 0.6,
+          "bossMaxDurationTurns": 1
+        }
+      ],
+      "cooldownTurns": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "notes": "On bosses, recommended rule: Silence duration fixed 1 turn; chance halved."
+    },
+    {
+      "id": "a_spill_nova",
+      "name": "Spill Nova",
+      "line": "Arcanist",
+      "tier": 2,
+      "type": "magic",
+      "element": "Water",
+      "target": "all_enemies",
+      "damageMultiplier": [
+        0.7,
+        0.762,
+        0.825,
+        0.887,
+        0.95
+      ],
+      "status": [
+        {
+          "name": "Slow",
+          "chancePct": [
+            40,
+            45,
+            50,
+            55,
+            60
+          ],
+          "durationTurns": [
+            2,
+            2,
+            2,
+            2,
+            3
+          ],
+          "effect": "SPD - (20%..35%)",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 2
+        }
+      ],
+      "slowPct": [
+        20.0,
+        23.75,
+        27.5,
+        31.25,
+        35.0
+      ],
+      "cooldownTurns": [
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "id": "a_chain_reaction",
+      "name": "Chain Reaction",
+      "line": "Arcanist",
+      "tier": 3,
+      "type": "magic",
+      "element": "Fire",
+      "target": "enemy",
+      "damageMultiplier": [
+        1.1,
+        1.2,
+        1.3,
+        1.4,
+        1.5
+      ],
+      "bonusExplosionMultiplier": [
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2
+      ],
+      "requiresDebuffs": 2,
+      "cooldownTurns": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "notes": "If target has >=2 debuffs, add extra explosion damage with bonus multiplier."
+    },
+    {
+      "id": "a_time_stop",
+      "name": "Time Stop",
+      "line": "Arcanist",
+      "tier": 3,
+      "type": "magic",
+      "element": "Ghost",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8
+      ],
+      "status": [
+        {
+          "name": "Stun",
+          "chancePct": [
+            21.25,
+            24.44,
+            25,
+            25,
+            25
+          ],
+          "durationTurns": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "effect": "Skip turn (hard CC)",
+          "bossChanceMultiplier": 0.6,
+          "bossMaxDurationTurns": 1
+        }
+      ],
+      "cooldownTurns": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ],
+      "notes": "Boss rule: Stun chance reduced by 40% (or apply Tenacity mechanic)."
+    },
+    {
+      "id": "a_curse_mastery",
+      "name": "Curse Mastery",
+      "line": "Arcanist",
+      "tier": 3,
+      "type": "passive",
+      "element": "Shadow",
+      "target": "self",
+      "statusChanceBonusPct": [
+        5.0,
+        7.5,
+        10.0,
+        12.5,
+        15.0
+      ],
+      "debuffDurationBonusTurns": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "notes": "Passive. Increases status application; later ranks extend debuff duration."
+    },
+    {
+      "id": "a_arcane_storm",
+      "name": "Arcane Storm",
+      "line": "Arcanist",
+      "tier": 4,
+      "type": "magic",
+      "element": "Wind",
+      "target": "all_enemies",
+      "damageMultiplier": [
+        0.95,
+        1.04,
+        1.14,
+        1.23,
+        1.33
+      ],
+      "bonusVsMarkedPct": [
+        20,
+        25,
+        30,
+        35,
+        40
+      ],
+      "cooldownTurns": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "a_debuff_spread",
+      "name": "Debuff Spread",
+      "line": "Arcanist",
+      "tier": 4,
+      "type": "utility",
+      "element": "Shadow",
+      "target": "all_enemies",
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "effect": "Copy 1 random debuff from primary target to all enemies (duration -1 turn).",
+      "notes": "If no debuff exists, no effect (still consumes action)."
+    },
+    {
+      "id": "a_necro_pact",
+      "name": "Necro Pact",
+      "line": "Arcanist",
+      "tier": 4,
+      "type": "buff",
+      "element": "Undead",
+      "target": "self",
+      "matkBonusPct": [
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      "durationTurns": [
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "cooldownTurns": [
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "notes": "Drawback suggestion: -30% healing received and +10% Holy damage taken."
+    },
+    {
+      "id": "p_first_aid",
+      "name": "First Aid",
+      "line": "Support",
+      "tier": 1,
+      "type": "heal",
+      "element": "Holy",
+      "target": "ally",
+      "healPctMaxHp": [
+        12.0,
+        14.5,
+        17.0,
+        19.5,
+        22.0
+      ],
+      "healScalingFromMatk": [
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6
+      ],
+      "cooldownTurns": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "notes": "Heal amount = (targetMaxHP * pct) + (casterMATK * scaling)."
+    },
+    {
+      "id": "p_encourage",
+      "name": "Encourage",
+      "line": "Support",
+      "tier": 1,
+      "type": "buff",
+      "element": "Neutral",
+      "target": "party",
+      "atkBonusPct": [
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "p_cleanse",
+      "name": "Cleanse",
+      "line": "Support",
+      "tier": 1,
+      "type": "utility",
+      "element": "Holy",
+      "target": "ally",
+      "removeDebuffs": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "smallHealPct": [
+        6,
+        6,
+        6,
+        8,
+        8
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "p_guard_chant",
+      "name": "Guard Chant",
+      "line": "Support",
+      "tier": 2,
+      "type": "buff",
+      "element": "Earth",
+      "target": "party",
+      "defBonusPct": [
+        15.0,
+        18.75,
+        22.5,
+        26.25,
+        30.0
+      ],
+      "statusResistBonusPct": [
+        10.0,
+        12.5,
+        15.0,
+        17.5,
+        20.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "cooldownTurns": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "id": "p_battle_hymn",
+      "name": "Battle Hymn",
+      "line": "Support",
+      "tier": 2,
+      "type": "buff",
+      "element": "Wind",
+      "target": "party",
+      "atkBonusPct": [
+        15.0,
+        17.5,
+        20.0,
+        22.5,
+        25.0
+      ],
+      "critChanceBonusPct": [
+        5.0,
+        6.75,
+        8.5,
+        10.25,
+        12.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "p_haste",
+      "name": "Haste",
+      "line": "Support",
+      "tier": 2,
+      "type": "buff",
+      "element": "Wind",
+      "target": "party",
+      "spdBonus": [
+        2.0,
+        2.75,
+        3.5,
+        4.25,
+        5.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "p_barrier",
+      "name": "Barrier",
+      "line": "Support",
+      "tier": 3,
+      "type": "shield",
+      "element": "Earth",
+      "target": "ally",
+      "shieldPctMaxHp": [
+        15.0,
+        18.75,
+        22.5,
+        26.25,
+        30.0
+      ],
+      "durationTurns": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "cooldownTurns": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "id": "p_recovery_song",
+      "name": "Recovery Song",
+      "line": "Support",
+      "tier": 3,
+      "type": "heal_over_time",
+      "element": "Holy",
+      "target": "party",
+      "hotPctMaxHpPerTurn": [
+        5.0,
+        6.25,
+        7.5,
+        8.75,
+        10.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "cooldownTurns": [
+        12,
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "p_angels_blessing",
+      "name": "Angel’s Blessing",
+      "line": "Support",
+      "tier": 3,
+      "type": "buff",
+      "element": "Holy",
+      "target": "ally",
+      "preventDeath": true,
+      "durationTurns": [
+        5,
+        5,
+        5,
+        5,
+        6
+      ],
+      "reviveHealPct": [
+        15.0,
+        17.5,
+        20.0,
+        22.5,
+        25.0
+      ],
+      "cooldownTurns": [
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "notes": "If ally would die, set HP to reviveHealPct and consume the buff."
+    },
+    {
+      "id": "p_miracle_service",
+      "name": "Miracle Service",
+      "line": "Support",
+      "tier": 4,
+      "type": "heal_cleanse",
+      "element": "Holy",
+      "target": "party",
+      "healPctMaxHp": [
+        28.5,
+        32.06,
+        35.62,
+        39.19,
+        42.75
+      ],
+      "removeDebuffs": [
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "cooldownTurns": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ]
+    },
+    {
+      "id": "p_sacred_aura",
+      "name": "Sacred Aura",
+      "line": "Support",
+      "tier": 4,
+      "type": "buff",
+      "element": "Holy",
+      "target": "party",
+      "finalDamageBonusPct": [
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "statusResistBonusPct": [
+        15.0,
+        17.5,
+        20.0,
+        22.5,
+        25.0
+      ],
+      "durationTurns": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "cooldownTurns": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ]
+    },
+    {
+      "id": "p_team_resonance",
+      "name": "Team Resonance",
+      "line": "Support",
+      "tier": 4,
+      "type": "buff",
+      "element": "Neutral",
+      "target": "party",
+      "effect": "For 3 turns: party damage bonus = 5% * number of active party buffs (cap 25%).",
+      "durationTurns": [
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "cooldownTurns": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "id": "b_flaming_shot",
+      "name": "Flaming Shot",
+      "line": "Bar Alchemist",
+      "tier": 1,
+      "type": "magic",
+      "element": "Fire",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.9,
+        0.98,
+        1.06,
+        1.14,
+        1.22
+      ],
+      "status": [
+        {
+          "name": "Burn",
+          "chancePct": [
+            35,
+            40,
+            45,
+            50,
+            55
+          ],
+          "durationTurns": [
+            3,
+            3,
+            3,
+            4,
+            4
+          ],
+          "effect": "DoT + healing received -20%",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 3
+        }
+      ],
+      "cooldownTurns": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "b_icy_tonic",
+      "name": "Icy Tonic",
+      "line": "Bar Alchemist",
+      "tier": 1,
+      "type": "magic",
+      "element": "Water",
+      "target": "enemy",
+      "damageMultiplier": [
+        0.8,
+        0.87,
+        0.94,
+        1.01,
+        1.08
+      ],
+      "status": [
+        {
+          "name": "Freeze",
+          "chancePct": [
+            8.5,
+            10.62,
+            12.75,
+            14.88,
+            17.0
+          ],
+          "durationTurns": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "effect": "Skip turn (chance-based CC)",
+          "bossChanceMultiplier": 0.6,
+          "bossMaxDurationTurns": 1
+        },
+        {
+          "name": "Slow",
+          "chancePct": [
+            60,
+            64,
+            68,
+            72,
+            76
+          ],
+          "durationTurns": [
+            2,
+            2,
+            2,
+            3,
+            3
+          ],
+          "effect": "SPD - (30%..45%)",
+          "bossChanceMultiplier": 0.85,
+          "bossMaxDurationTurns": 2
+        }
+      ],
+      "slowPct": [
+        30.0,
+        33.75,
+        37.5,
+        41.25,
+        45.0
+      ],
+      "cooldownTurns": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "b_mixology",
+      "name": "Mixology",
+      "line": "Bar Alchemist",
+      "tier": 1,
+      "type": "utility",
+      "element": "Neutral",
+      "target": "self_or_ally",
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "effect": "Random potion: Heal / ATK buff / SPD buff / Cleanse / Poison enemy / Shield."
+    },
+    {
+      "id": "h_redirect",
+      "name": "Redirect",
+      "line": "Host Ranger",
+      "tier": 1,
+      "type": "support",
+      "element": "Wind",
+      "target": "ally",
+      "effect": "Place Decoy for 2 turns: first single-target hit aimed at party is redirected to the target and damage reduced.",
+      "damageReductionPct": [
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      "durationTurns": [
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "g_sanitize_shield",
+      "name": "Sanitize Shield",
+      "line": "Steward Guardian",
+      "tier": 1,
+      "type": "support",
+      "element": "Earth",
+      "target": "party",
+      "statusResistBonusPct": [
+        10.0,
+        12.5,
+        15.0,
+        17.5,
+        20.0
+      ],
+      "shieldPctMaxHp": [
+        8,
+        10,
+        12,
+        14,
+        16
+      ],
+      "durationTurns": [
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "cooldownTurns": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    }
+  ],
+  "assumptions": {
+    "defaultMode": "party3",
+    "modes": [
+      "solo",
+      "party3"
+    ],
+    "turnSystem": "turn-based; 1 action per turn; cooldown in turns",
+    "bossRules": [
+      "Hard CC (Stun/Freeze/Silence) chance is multiplied by 0.6 vs bosses; max duration 1 turn.",
+      "Tenacity: after a unit is hit by hard CC, it gains +40% hardCC resist for 2 turns."
+    ],
+    "damageRules": [
+      "Final damage = baseDamage * elementMultiplier (ROC table). 0% allowed.",
+      "If you don't want negative, clampMin=0 (default)."
+    ]
+  },
+  "balancePresets": {
+    "solo": {
+      "playerHpMult": 1.25,
+      "playerDmgMult": 1.1,
+      "enemyHpMult": 0.85,
+      "enemyDmgMult": 0.9,
+      "notes": "Solo should feel similar difficulty to party3 by scaling enemies down."
+    },
+    "party3": {
+      "playerHpMult": 1.0,
+      "playerDmgMult": 1.0,
+      "enemyHpMult": 1.0,
+      "enemyDmgMult": 1.0,
+      "notes": "Baseline tuning target for 3-person party (DPS/Mage/Support)."
+    }
+  },
+  "statusTenacity": {
+    "hardCC": [
+      "Stun",
+      "Silence",
+      "Freeze"
+    ],
+    "tenacityBuff": {
+      "hardCcResistBonusPct": 40,
+      "durationTurns": 2,
+      "trigger": "after being affected by hard CC (Stun/Freeze/Silence)"
+    },
+    "capApplyChancePct": 80
+  }
+}

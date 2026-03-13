@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Laya Staff Task • Quests</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="bg">
+  <div class="container" style="max-width:980px;">
+    <div class="topbar">
+      <div>
+        <div class="brand">Laya Staff Task</div>
+        <div class="small">Daily & Weekly Quests</div>
+      </div>
+      <div class="actions">
+        <a class="btn secondary" href="./game.html">Back</a>
+        <a class="btn secondary" href="./leaderboard.html">Leaderboard</a>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div class="row" style="align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <h3 style="margin:0;">Status</h3>
+        <div class="row" style="gap:10px; flex-wrap:wrap;">
+          <span class="pill">Gold: <b id="qGold">0</b></span>
+          <span class="pill">Essence: <b id="qEss">0</b></span>
+          <span class="pill">Today: <b id="qDate">-</b></span>
+          <span class="pill">Week: <b id="qWeek">-</b></span>
+        </div>
+      </div>
+      <div class="small" style="opacity:.85; margin-top:8px;">
+        ทำเควสแล้วกด Claim เพื่อรับรางวัล (จะรีเซ็ตอัตโนมัติรายวัน/รายสัปดาห์)
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <h3 style="margin:0 0 10px 0;">Daily Quests</h3>
+      <div id="dailyList" class="quests-grid"></div>
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <h3 style="margin:0 0 10px 0;">Weekly Quests</h3>
+      <div id="weeklyList" class="quests-grid"></div>
+    </div>
+  </div>
+
+  <script src="js/firebase-init.js"></script>
+  <script type="module" src="./js/quests.js"></script>
+</body>
+</html>

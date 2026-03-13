@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="assets/favicon.svg" />
+<title>Game Profile | Laya Staff Task</title>
+
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#0b1220">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body onload="loadGameProfilePage()" class="bg">
+  <div class="container" style="max-width:980px;">
+    <div class="topbar">
+      <div>
+        <div class="brand">Laya Staff Task</div>
+        <div class="small">Game Profile</div>
+      </div>
+      <div class="actions">
+        <a class="btn secondary" href="./staff.html">Back</a>
+        <button class="btn secondary" onclick="doLogout()">Logout</button>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <h3 style="margin:0 0 10px 0;">Profile</h3>
+
+      <div class="grid two" style="gap:12px;">
+        <div>
+          <div class="small">Name</div>
+          <div style="font-weight:800; font-size:18px;" id="gpName">-</div>
+          <div class="small" style="margin-top:6px;">
+            <span id="gpStaffID">-</span> • <span id="gpDept">-</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="small">Class</div>
+          <div class="row" style="gap:12px; align-items:center; flex-wrap:wrap; margin-top:8px;">
+            <div class="class-preview">
+              <div class="small" style="opacity:.85; margin-bottom:6px;">Preview</div>
+              <div class="class-portrait" id="gpClassPreview"></div>
+            </div>
+
+            <div style="flex:1; min-width:240px;">
+
+          <div class="row" style="gap:10px; align-items:center; flex-wrap:wrap; margin-top:4px;">
+            <select id="gpClass" style="height:40px; border-radius:10px; padding: 6px 10px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:#fff; min-width:220px;">
+              <option value="">-- choose class --</option>
+              <option value="striker">Striker</option>
+              <option value="arcanist">Arcanist</option>
+              <option value="support">Support</option>
+              <option value="server_knight">Server Knight</option>
+              <option value="host_ranger">Host Ranger</option>
+              <option value="bar_alchemist">Bar Alchemist</option>
+              <option value="steward_guardian">Steward Guardian</option>
+            </select>
+            <button class="btn" id="btnSaveClass">Save</button>
+            <button class="btn secondary" id="btnChangeClass" style="display:none;">Change</button>
+          </div>
+          <div class="small" id="gpClassHint" style="margin-top:6px; opacity:.85;">เลือกครั้งแรกแล้วกด Save</div>
+        </div>
+      </div>
+
+      <hr style="margin:14px 0; opacity:.2;" />
+
+      <div class="grid two" style="gap:12px;">
+        <div class="card" style="padding:12px; background: rgba(0,0,0,.14);">
+          <div class="small">Level</div>
+          <div style="font-weight:900; font-size:28px;" id="gpLevel">1</div>
+          <div class="small">EXP: <b id="gpExp">0</b> <span class="small">(Staff <b id="gpExpStaff">0</b> + Tower <b id="gpExpTower">0</b>)</span></div>
+          <div class="small" style="margin-top:6px;">Gold: <b id="gpGold">0</b></div>
+          <div class="small" style="margin-top:6px;">Essence: <b id="gpEssence">0</b></div>
+          <div style="height:10px; border-radius:999px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.12); margin-top:8px; overflow:hidden;">
+            <div id="gpExpBar" style="height:100%; width:0%; background: rgba(88,226,255,.75);"></div>
+          </div>
+          <div class="small" style="margin-top:6px;" id="gpExpNext">-</div>
+        </div>
+
+        <div class="card" style="padding:12px; background: rgba(0,0,0,.14);">
+          <div class="small">Skill Points</div>
+          <div style="font-weight:900; font-size:28px;">
+            <span id="gpSpAvail">0</span> <span class="small">available</span>
+          </div>
+          <div class="small">Total: <b id="gpSpTotal">0</b> • Spent: <b id="gpSpSpent">0</b></div>
+
+          <hr style="margin:12px 0; opacity:.2;" />
+
+          <div class="small">Tower</div>
+          <div class="small">Highest: <b id="gpFloorHigh">1</b> • Current: <b id="gpFloorCur">1</b></div>
+          <div class="row" style="gap:10px; margin-top:10px; flex-wrap:wrap;">
+            <button class="btn" id="btnGoTower">Go to Tower</button>
+          <a class="btn secondary" href="./inventory.html">Inventory</a>
+          <a class="btn secondary" href="./shop.html">Shop</a>
+          <a class="btn secondary" href="./sets.html">Sets</a>
+          <a class="btn secondary" href="./badges.html">Badges</a>
+          <a class="btn secondary" href="./quests.html">Quests</a>
+          <a class="btn secondary" href="./leaderboard.html">Leaderboard</a>
+            <button class="btn secondary" id="btnRefresh">Refresh</button>
+          </div>
+          <div class="small" style="margin-top:8px; opacity:.85;">
+            * EXP ดึงจากคะแนนใน Staff Points (field <code>staff.points</code>)
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:12px;">
+      <h3 style="margin:0 0 10px 0;">What’s next</h3>
+      <div class="small" style="line-height:1.6;">
+        1) ต่อไปเราจะทำหน้า Skill Tree ให้กดปลดสกิล (ใช้ Skill Points)<br/>
+        2) ทำระบบชนะชั้น → อัปเดต floorHighest/floorCurrent<br/>
+        3) ผูกกับ reward (Gold/Relic/Badge) จากบอส/มินิบอส
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/firebase-init.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/game.js"></script>
+
+        
+        <div class="card" style="margin-top:14px;">
+          <h3 style="margin:0 0 10px 0;">Equipment</h3>
+          <div class="grid three" id="equippedSummary"></div>
+          <div class="small" style="opacity:.85; margin-top:10px;">
+            กด Inventory เพื่อสวมใส่ไอเทม (Weapon/Armor/Relic)
+          </div>
+          <div class="small" id="setBonusHint" style="opacity:.9; margin-top:8px;"></div
+          </div>
+        </div>
+
+<div class="card" style="margin-top:14px;">
+          <h3 style="margin:0 0 10px 0;">Equipped Skills (1–4)</h3>
+          <div class="small" style="opacity:.85; margin-bottom:10px;">เลือกสกิล 4 ช่องสำหรับใช้ใน Battle (จะเปลี่ยนตาม Class)</div>
+
+          <div class="grid two">
+            <div>
+              <div class="small">Slot 1</div>
+              <select id="equipSlot1"></select>
+            </div>
+            <div>
+              <div class="small">Slot 2</div>
+              <select id="equipSlot2"></select>
+            </div>
+            <div>
+              <div class="small">Slot 3</div>
+              <select id="equipSlot3"></select>
+            </div>
+            <div>
+              <div class="small">Slot 4</div>
+              <select id="equipSlot4"></select>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button class="btn" id="btnSaveEquip">Save Equipped Skills</button>
+            <button class="btn secondary" id="btnEquipDefault">Use Default Loadout</button>
+            <div class="small" id="equipHint" style="opacity:.85;"></div>
+          </div>
+        </div>
+
+</body>
+</html>

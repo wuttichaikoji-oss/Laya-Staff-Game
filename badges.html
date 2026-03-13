@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Laya Staff Task • Badges</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="bg">
+  <div class="container" style="max-width:980px;">
+    <div class="topbar">
+      <div>
+        <div class="brand">Laya Staff Task</div>
+        <div class="small">Badges & Title</div>
+      </div>
+      <div class="actions">
+        <a class="btn secondary" href="./game.html">Back</a>
+        <a class="btn secondary" href="./sets.html">Sets</a>
+        <a class="btn secondary" href="./inventory.html">Inventory</a>
+        <a class="btn secondary" href="./quests.html">Quests</a>
+        <a class="btn secondary" href="./leaderboard.html">Leaderboard</a>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div class="row" style="align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <div>
+          <h3 style="margin:0;">Current Title</h3>
+          <div class="small" style="opacity:.85; margin-top:6px;">
+            แสดงใต้ชื่อบนหน้าโปรไฟล์ และสามารถเปลี่ยนได้ตลอดเวลา
+          </div>
+        </div>
+        <div class="row" style="gap:10px; align-items:center; flex-wrap:wrap;">
+          <span class="pill">Title: <b id="curTitle">—</b></span>
+          <button class="btn secondary" id="btnClearTitle">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <div class="row" style="align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <h3 style="margin:0;">Your Badges</h3>
+        <span class="pill">Total: <b id="badgeCount">0</b></span>
+      </div>
+
+      <div id="badgeList" class="badges-grid" style="margin-top:12px;"></div>
+
+      <div class="small" style="opacity:.85; margin-top:10px;">
+        💡 Tip: Badge จาก Collection Reward จะได้จากการสะสมเซ็ตให้ครบ (Weapon+Armor+Relic) ครั้งแรก
+      </div>
+    </div>
+  </div>
+
+  <script src="js/firebase-init.js"></script>
+  <script type="module" src="./js/badges.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Laya Staff Task • Shop</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="bg">
+  <div class="container" style="max-width:980px;">
+    <div class="topbar">
+      <div>
+        <div class="brand">Laya Staff Task</div>
+        <div class="small">Shop</div>
+      </div>
+      <div class="actions">
+        <a class="btn secondary" href="./game.html">Back</a>
+        <a class="btn secondary" href="./inventory.html">Inventory</a>
+        <a class="btn secondary" href="./sets.html">Sets</a>
+        <a class="btn secondary" href="./badges.html">Badges</a>
+        <a class="btn secondary" href="./quests.html">Quests</a>
+        <a class="btn secondary" href="./leaderboard.html">Leaderboard</a>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div class="row" style="align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <h3 style="margin:0;">Balance</h3>
+        <div class="row" style="gap:10px; flex-wrap:wrap;">
+          <span class="pill">Gold: <b id="shopGold">0</b></span>
+          <span class="pill">Essence: <b id="shopEssence">0</b></span>
+        </div>
+      </div>
+      <div class="small" style="opacity:.85; margin-top:8px;">
+        ร้านค้าสำหรับใช้ Gold แลกของเล่น/วัตถุดิบ (ไม่ใช่เงินจริง)
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <h3 style="margin:0 0 10px 0;">Buy</h3>
+      <div class="shop-grid">
+        <div class="shop-card rarity-C">
+          <div style="font-weight:900;">Essence x1</div>
+          <div class="small" style="opacity:.85; margin-top:6px;">ใช้สำหรับ Upgrade ไอเทม</div>
+          <div class="mini-stats">
+            <span class="tag">Cost: 120g</span>
+          </div>
+          <button class="btn" id="buyEss1" style="margin-top:10px; width:100%;">Buy</button>
+        </div>
+
+        <div class="shop-card rarity-R">
+          <div style="font-weight:900;">Essence x5</div>
+          <div class="small" style="opacity:.85; margin-top:6px;">คุ้มกว่า</div>
+          <div class="mini-stats">
+            <span class="tag">Cost: 550g</span>
+          </div>
+          <button class="btn" id="buyEss5" style="margin-top:10px; width:100%;">Buy</button>
+        </div>
+
+        <div class="shop-card rarity-R">
+          <div style="font-weight:900;">Mystery Chest</div>
+          <div class="small" style="opacity:.85; margin-top:6px;">สุ่มไอเทม 1 ชิ้น (C/R/E) ตามชั้นสูงสุด</div>
+          <div class="mini-stats">
+            <span class="tag">Cost: 400g</span>
+          </div>
+          <button class="btn" id="buyChest" style="margin-top:10px; width:100%;">Buy</button>
+        </div>
+
+        <div class="shop-card rarity-E">
+          <div style="font-weight:900;">Epic Chest</div>
+          <div class="small" style="opacity:.85; margin-top:6px;">สุ่ม (R/E/L) โอกาสทองนิดๆ</div>
+          <div class="mini-stats">
+            <span class="tag">Cost: 900g</span>
+          </div>
+          <button class="btn" id="buyEpicChest" style="margin-top:10px; width:100%;">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <h3 style="margin:0 0 10px 0;">History</h3>
+      <div id="shopLog" class="battle-log" style="max-height: 220px;"></div>
+    </div>
+  </div>
+
+  <script src="js/firebase-init.js"></script>
+  <script type="module" src="./js/shop.js"></script>
+</body>
+</html>

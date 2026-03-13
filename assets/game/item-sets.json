@@ -1,0 +1,74 @@
+{
+  "sets": [
+    {
+      "id": "service",
+      "name": "Service Set",
+      "desc": "สมดุลสำหรับงานบริการ",
+      "bonus2": {
+        "atkPct": 4,
+        "hpPct": 4
+      },
+      "bonus3": {
+        "atkPct": 8,
+        "hpPct": 8
+      },
+      "collectionReward": {
+        "gold": 300,
+        "essence": 1,
+        "badge": "Service Collector"
+      }
+    },
+    {
+      "id": "bar",
+      "name": "Bar Set",
+      "desc": "แรงและติดธาตุไฟสำหรับสายบาร์",
+      "bonus2": {
+        "atkPct": 6
+      },
+      "bonus3": {
+        "atkPct": 12,
+        "imbue": "Fire"
+      },
+      "collectionReward": {
+        "gold": 350,
+        "essence": 1,
+        "badge": "Bar Collector"
+      }
+    },
+    {
+      "id": "vip",
+      "name": "VIP Set",
+      "desc": "กันเคสตีไม่เข้า 0% ให้เหลือขั้นต่ำ",
+      "bonus2": {
+        "atkPct": 5
+      },
+      "bonus3": {
+        "atkPct": 10,
+        "antiZeroMinPct": 25
+      },
+      "collectionReward": {
+        "gold": 450,
+        "essence": 2,
+        "badge": "VIP Collector"
+      }
+    },
+    {
+      "id": "guardian",
+      "name": "Guardian Set",
+      "desc": "อึดถึก เหมาะกับสายป้องกัน",
+      "bonus2": {
+        "hpPct": 8,
+        "atkPct": 3
+      },
+      "bonus3": {
+        "hpPct": 15,
+        "atkPct": 5
+      },
+      "collectionReward": {
+        "gold": 320,
+        "essence": 1,
+        "badge": "Guardian Collector"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "common": {
+    "Dustling": "dustling",
+    "Tray Runner": "tray_runner",
+    "Cutlery Imp": "cutlery_imp",
+    "Coffee Gremlin": "coffee_gremlin",
+    "Baby Chair Golem": "baby_chair_golem",
+    "Booking Phantom": "booking_phantom",
+    "Glass Shard": "glass_shard",
+    "Hangover Slime": "hangover_slime",
+    "Ice Tonic": "ice_tonic",
+    "Detail Wraith": "detail_wraith",
+    "Box Mimic": "box_mimic",
+    "Phone Ring": "phone_ring"
+  },
+  "bosses": {
+    "Morning Rush": "morning_rush",
+    "Buffet Hydra": "buffet_hydra",
+    "VIP Entrance": "vip_entrance",
+    "Station Commander": "station_commander",
+    "Mixology Master": "mixology_master",
+    "Mangrove Critic": "mangrove_critic",
+    "Storage Guardian": "storage_guardian",
+    "Banquet Overlord": "banquet_overlord",
+    "Complaint Queen": "complaint_queen",
+    "The Grand Audit": "grand_audit"
+  },
+  "fallbackRules": [
+    {
+      "match": "Hydra|Buffet",
+      "use": "buffet_hydra",
+      "group": "bosses"
+    },
+    {
+      "match": "Critic|Napkin|Wraith|Knife",
+      "use": "detail_wraith",
+      "group": "common"
+    },
+    {
+      "match": "Gremlin|Spark|Shot|Fire",
+      "use": "coffee_gremlin",
+      "group": "common"
+    },
+    {
+      "match": "Slime|Poison|Goblin|Label",
+      "use": "hangover_slime",
+      "group": "common"
+    },
+    {
+      "match": "Phantom|Ghost|Ring|Time|Reaper",
+      "use": "booking_phantom",
+      "group": "common"
+    },
+    {
+      "match": "Cart|Trolley|Storage|Box",
+      "use": "box_mimic",
+      "group": "common"
+    },
+    {
+      "match": "Glass",
+      "use": "glass_shard",
+      "group": "common"
+    },
+    {
+      "match": "Chair|Earth|Dust|Table",
+      "use": "dustling",
+      "group": "common"
+    },
+    {
+      "match": "Runner|Wind|Breeze|Queue",
+      "use": "tray_runner",
+      "group": "common"
+    }
+  ],
+  "minibosses": {
+    "The Missing Spoon": "missing_spoon",
+    "Coffee Spill": "coffee_spill",
+    "Double Booking": "double_booking",
+    "Glassware Breaker": "glassware_breaker",
+    "Hangover King": "hangover_king",
+    "Napkin Count": "napkin_count",
+    "Rolling Trolley": "rolling_trolley",
+    "Last-Minute Change": "last_minute_change",
+    "Double Charge Incident": "double_charge_incident",
+    "Checklist Reaper (Mini)": "checklist_reaper_mini"
+  }
+}

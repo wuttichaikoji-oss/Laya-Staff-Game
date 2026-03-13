@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Laya Staff Task • Leaderboard</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="bg">
+  <div class="container" style="max-width:980px;">
+    <div class="topbar">
+      <div>
+        <div class="brand">Laya Staff Task</div>
+        <div class="small">Leaderboard</div>
+      </div>
+      <div class="actions">
+        <a class="btn secondary" href="./game.html">Back</a>
+        <a class="btn secondary" href="./quests.html">Quests</a>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div class="row" style="align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+        <h3 style="margin:0;">Ranking</h3>
+        <select id="lbMode" style="height:40px; border-radius:10px; padding:6px 10px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:#fff;">
+          <option value="floorHighest">Highest Floor</option>
+          <option value="towerClears">Tower Clears</option>
+          <option value="setsCompleted">Sets Completed</option>
+        </select>
+      </div>
+      <div class="small" style="opacity:.85; margin-top:8px;">
+        ข้อมูลมาจาก collection <b>leaderboards</b> (อัปเดตตอนเคลียร์ชั้น)
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Title</th>
+              <th id="lbMetric">Value</th>
+            </tr>
+          </thead>
+          <tbody id="lbRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/firebase-init.js"></script>
+  <script type="module" src="./js/leaderboard.js"></script>
+</body>
+</html>
