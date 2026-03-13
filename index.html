@@ -1,13 +1,67 @@
-<!doctype html><html lang='th'><head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="icon" href="assets/favicon.svg" />
-<title>Laya Staff Task</title>
-  <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0b1220">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Laya Tower RPG (Clean)</title>
+  <link rel="stylesheet" href="./css/game.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div>
+        <div class="brand">Laya Tower RPG (Clean Build)</div>
+        <div class="small">Turn-based • ROC Elements • 7 Classes • Offline-first</div>
+      </div>
+      <div class="row">
+        <button class="btn" id="btnReset">Reset Save</button>
+      </div>
+    </div>
 
-</head><body><script>window.location.href='login.html';</script></body></html>
+    <div class="grid two">
+      <div class="card">
+        <h3 style="margin:0 0 10px 0;">Profile</h3>
+        <div class="row" style="justify-content:space-between;">
+          <span class="pill">Class: <b id="pClass">-</b></span>
+          <span class="pill">LV: <b id="pLv">1</b></span>
+          <span class="pill">Gold: <b id="pGold">0</b></span>
+          <span class="pill">Floor: <b id="pFloor">1</b></span>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="small">EXP</div>
+          <div class="bar" style="margin-top:6px;"><div id="expBar"></div></div>
+          <div class="small" style="margin-top:6px;"><span id="expTxt">0/0</span></div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <button class="btn primary" id="btnEnter" style="width:100%;">Enter Tower</button>
+          <div class="small" style="margin-top:10px; opacity:.85;">
+            * เกมนี้เป็น prototype แบบเล่นได้จริง (v0.1) — เน้นให้ “เหมือนเกม” ก่อน แล้วค่อยต่อระบบอื่น
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px 0;">Choose Class</h3>
+        <div id="classGrid" class="grid" style="grid-template-columns: repeat(2,minmax(0,1fr)); gap:10px;"></div>
+        <div class="small" style="margin-top:10px; opacity:.85;">
+          Tip: เลือกคลาสก่อน แล้วค่อยกด <span class="kbd">Enter Tower</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h3 style="margin:0 0 10px 0;">What’s in v0.1</h3>
+      <div class="small">
+        • Turn-based battle • 4 skills/class • Status (Poison/Burn/Bleed/Stun) • Buff/Debuff • ROC element table + 0% miss<br/>
+        • Floors 1–10 (sample) • EXP/Level/Gold saved in LocalStorage
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/storage.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/lobby.js"></script>
+</body>
+</html>

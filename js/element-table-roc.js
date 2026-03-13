@@ -5,10 +5,8 @@
  * Usage:
  *   import { ELEMENTS, ELEMENT_TABLE, elementMultiplier, elementPercent, applyElement } from "./element-table-roc.js";
  */
-
-export const ELEMENTS = ["Neutral", "Water", "Earth", "Fire", "Wind", "Poison", "Holy", "Shadow", "Ghost", "Undead"];
-
-export const ELEMENT_TABLE = {
+const ELEMENTS = ["Neutral", "Water", "Earth", "Fire", "Wind", "Poison", "Holy", "Shadow", "Ghost", "Undead"];
+const ELEMENT_TABLE = {
   "1": {
     "Neutral": {
       "Neutral": 100,
@@ -500,7 +498,7 @@ export const ELEMENT_TABLE = {
 };
 
 /** Return percent (e.g., 175 means 175%) */
-export function elementPercent(atkElement, defElement, defLevel = 1) {
+function elementPercent(atkElement, defElement, defLevel = 1) {
   const lvl = Number(defLevel) || 1;
   const row = ELEMENT_TABLE[lvl]?.[defElement];
   const pct = row?.[atkElement];
@@ -508,7 +506,7 @@ export function elementPercent(atkElement, defElement, defLevel = 1) {
 }
 
 /** Return multiplier (e.g., 175% => 1.75) */
-export function elementMultiplier(atkElement, defElement, defLevel = 1) {
+function elementMultiplier(atkElement, defElement, defLevel = 1) {
   return elementPercent(atkElement, defElement, defLevel) / 100;
 }
 
@@ -516,8 +514,12 @@ export function elementMultiplier(atkElement, defElement, defLevel = 1) {
  * Apply element multiplier to baseDamage.
  * - If you don't want "negative damage" (heal-like behavior), set clampMin=0.
  */
-export function applyElement(baseDamage, atkElement, defElement, defLevel = 1, clampMin = 0) {
+function applyElement(baseDamage, atkElement, defElement, defLevel = 1, clampMin = 0) {
   const mul = elementMultiplier(atkElement, defElement, defLevel);
   const dmg = baseDamage * mul;
   return Math.max(clampMin, dmg);
 }
+
+
+// Global expose
+window.ROC = { ELEMENTS, ELEMENT_TABLE, elementMultiplier, elementPercent, applyElement };

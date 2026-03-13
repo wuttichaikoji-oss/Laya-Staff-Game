@@ -3,129 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Laya Staff Task • Battle</title>
-
-  <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0b1220">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <link rel="stylesheet" href="./css/style.css" />
+  <title>Battle • Laya Tower RPG</title>
+  <link rel="stylesheet" href="./css/game.css" />
 </head>
-<body class="bg">
-  <div class="container" style="max-width:980px;">
+<body>
+  <div class="container">
     <div class="topbar">
       <div>
-        <div class="brand">Laya Staff Task</div>
-        <div class="small">Battle Demo (Animation)</div>
+        <div class="brand">Battle</div>
+        <div class="small">Turn-based • Choose skill each turn</div>
       </div>
-      <div class="actions">
-        <a class="btn secondary" href="./staff.html">Back</a>
+      <div class="row">
+        <a class="btn" href="./index.html">Back to Lobby</a>
       </div>
     </div>
 
-    <div class="battle-grid">
-      <div class="card battle-stage">
-        <div class="battle-header">
+    <div class="grid two">
+      <div class="card">
+        <div class="row" style="justify-content:space-between;">
           <div>
-            <div class="small">Stage</div>
-            <div style="font-weight:700;">Tower Floor <span id="floorLabel">10</span></div>
+            <div style="font-weight:900; font-size:16px;" id="plName">Player</div>
+            <div class="small"><span id="plClass">-</span> • LV <b id="plLv">1</b></div>
           </div>
-          
-          <div class="battle-kpis">
-            <div class="kpi">
-              <div class="small">Floor</div>
-              <div class="grid two" style="gap:8px; align-items:center;">
-                <input id="floor" type="number" min="1" max="100" value="10" style="height:40px; width:100%; border-radius:10px; padding:6px 10px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.25); color:#fff;" />
-                <button class="btn secondary" id="btnLoadFloor" style="height:40px;">Load</button>
-              </div>
-            </div>
-
-            <div class="kpi">
-              <div class="small">Player Class</div>
-              <select id="playerClass">
-                <option value="striker">Striker</option>
-                <option value="arcanist">Arcanist</option>
-                <option value="support">Support</option>
-                <option value="server_knight">Server Knight</option>
-                <option value="host_ranger">Host Ranger</option>
-                <option value="bar_alchemist">Bar Alchemist</option>
-                <option value="steward_guardian">Steward Guardian</option>
-              </select>
-            </div>
-
-            <div class="kpi">
-              <div class="small">Enemy</div>
-              <div id="enemyMeta" class="small" style="margin-top:6px; opacity:.95;">-</div>
-            </div>
-          </div>
-
-        </div>
-        </div>
-
-        <div class="arena" id="arena">
-          <div class="arena-bg"></div>
-
-          <div class="unit player" id="player">
-            <div class="unit-shadow"></div>
-            <div class="unit-body">
-              <div class="unit-avatar" aria-label="player avatar"></div>
-              <div class="unit-ring"></div>
-              <div class="status-layer" id="playerStatus"></div>
-            </div>
-            <div class="unit-name">You</div>
-            <div class="hpbar"><div class="hp" id="hpP"></div></div>
-          </div>
-
-          <div class="unit enemy" id="enemy">
-            <div class="unit-shadow"></div>
-            <div class="unit-body">
-              <div class="unit-avatar enemy" aria-label="enemy avatar"></div>
-              <div class="unit-ring enemy"></div>
-              <div class="status-layer" id="enemyStatus"></div>
-            </div>
-            <div class="unit-name">Enemy</div>
-            <div class="hpbar"><div class="hp enemy" id="hpE"></div></div>
+          <div class="row">
+            <span class="pill">Element: <b id="plEl">Neutral</b></span>
           </div>
         </div>
-
-        
-        <div class="enemy-list card" style="margin-top:10px; padding:10px;">
-          <div class="small" style="margin-bottom:8px;">Enemies on this floor (tap to target)</div>
-          <div id="enemyList" class="enemy-chips"></div>
+        <div style="margin-top:10px;">
+          <div class="small">HP <span id="plHpTxt"></span></div>
+          <div class="bar hp" style="margin-top:6px;"><div id="plHpBar"></div></div>
+          <div class="small" style="margin-top:10px;">MP <span id="plMpTxt"></span></div>
+          <div class="bar mp" style="margin-top:6px;"><div id="plMpBar"></div></div>
         </div>
 
-        <div class="battle-log" id="log"></div>
+        <div style="margin-top:12px;" class="row">
+          <span class="badge" id="plBuffs">No buffs</span>
+          <span class="badge bad" id="plDebuffs" style="display:none;">-</span>
+        </div>
       </div>
 
-      <div class="card battle-panel">
-        <h3 style="margin:0 0 10px 0;">Actions</h3>
-
-        <div class="grid two">
-          <button class="btn" id="btnAttack">Attack</button>
-          <button class="btn secondary" id="btnCast">Cast</button>
+      <div class="card">
+        <div class="row" style="justify-content:space-between;">
+          <div>
+            <div style="font-weight:900; font-size:16px;" id="enName">Enemy</div>
+            <div class="small">Floor <b id="enFloor">1</b> • DEF Lv <b id="enDefLv">1</b></div>
+          </div>
+          <div class="row">
+            <span class="pill">Element: <b id="enEl">Neutral</b></span>
+          </div>
+        </div>
+        <div style="margin-top:10px;">
+          <div class="small">HP <span id="enHpTxt"></span></div>
+          <div class="bar hp" style="margin-top:6px;"><div id="enHpBar"></div></div>
         </div>
 
-        <div class="skill-bar" id="skillBar" style="margin-top:10px;"></div>
-
-<div class="grid two" style="margin-top:10px;">
-  <button class="btn secondary" id="btnReset">Reset</button>
-  <button class="btn secondary" id="btnAutoNext">Auto Next: ON</button>
-</div>
-
-
-        <hr style="margin:14px 0; opacity:.2;" />
-
-        <div class="small">
-          ✅ มี animation: idle / attack / cast / hit / crit / floating damage / status overlay<br/>
-          ถ้าหน่อยมี “รูปตัวละครจริง” ส่งมาได้ เดี๋ยวเปลี่ยนจากตัวอักษร P/E เป็นภาพให้ และยังใช้ animation เดิมได้เลย
+        <div style="margin-top:12px;" class="row">
+          <span class="badge" id="enBuffs">No buffs</span>
+          <span class="badge bad" id="enDebuffs" style="display:none;">-</span>
         </div>
       </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="row" style="justify-content:space-between; align-items:flex-start;">
+        <div>
+          <h3 style="margin:0 0 4px 0;">Your Turn</h3>
+          <div class="small">เลือกสกิล → ระบบคำนวณธาตุ ROC + สถานะ → ศัตรูโต้กลับ</div>
+        </div>
+        <div class="row">
+          <span class="pill">Turn: <b id="turnNo">1</b></span>
+          <span class="pill">Gold: <b id="pGold2">0</b></span>
+        </div>
+      </div>
+
+      <div class="skillbar" id="skillBar" style="margin-top:12px;"></div>
+
+      <div class="row" style="margin-top:12px; justify-content:space-between;">
+        <button class="btn" id="btnEnd" disabled>End Turn</button>
+        <button class="btn primary" id="btnNext" style="display:none;">Next Floor</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h3 style="margin:0 0 10px 0;">Battle Log</h3>
+      <div class="log" id="log"></div>
     </div>
   </div>
 
-  <script src="js/firebase-init.js"></script>
-<script type="module" src="./js/battle.js"></script>
+  <script src="./js/element-table-roc.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/battle.js"></script>
 </body>
 </html>
